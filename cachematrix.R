@@ -1,5 +1,4 @@
 ## https://github.com/Ankur-Nangia/ProgrammingAssignment2
-## 1st commit SHA-1 hash identifier: 216368dc62af487024fe820d40dd755c0923d49a
 ## R Programming Assignment 2: Lexical Scoping
 ## Assignment: Caching the Inverse of a Matrix
 
@@ -11,14 +10,14 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 i <- NULL     
-        set <- function(y) {
+        set <- function(y) {                            ## set the values of the matrix.
                 x <<- y
                 i <<- NULL
         }
-        get <- function() x
-        setinverse <- function(inverse) i <<- inverse
-        getinverse <- function() i
-        list(set = set, 
+        get <- function() x                             ## get the values of the matrix.
+        setinverse <- function(inverse) i <<- inverse   ## set it inverse.
+        getinverse <- function() i                      ## get its inverse.
+        list(set = set,                                 ## This list is the special "matrix" object.  
              get = get,
              setinverse = setinverse,
              getinverse = getinverse)
@@ -31,14 +30,13 @@ i <- NULL
 ## in the cache via the setinverse function.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-        i <- x$getinverse()
-        if(!is.null(i)) {
-                message("getting cached data")
+        i <- x$getinverse()                           ## Return a matrix that is the inverse of 'x'.
+        if(!is.null(i)) {                             ## Checks for cached inverse.
+                message("getting cached data")  
                 return(i)
         }
-        data <- x$get()
-        i <- solve(data, ...)
+        data <- x$get()                               ## If no cached inverse, then the function.
+        i <- solve(data, ...)                         ## calculates and print.
         x$setinverse(i)
         i
 }
