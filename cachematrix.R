@@ -1,5 +1,6 @@
 ## https://github.com/Ankur-Nangia/ProgrammingAssignment2
-## Programming Assignment 2: Lexical Scoping
+## 1st commit SHA-1 hash identifier: 216368dc62af487024fe820d40dd755c0923d49a
+## R Programming Assignment 2: Lexical Scoping
 ## Assignment: Caching the Inverse of a Matrix
 
 ## makeCacheMatrix: This function creates a special "matrix" object which is a list containing a function to
